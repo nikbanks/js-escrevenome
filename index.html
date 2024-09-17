@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Rubik" rel="stylesheet">
+  <script src="sketch.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+  <h1><span>Welcome!</span></h1>
+
+  <p1><span>Hello! My name is Mint.<br></span></p1>
+
+  <p2><span>What you're seeing is my attempt in creating my first Net-Art piece using node server.js.</span></p2>
+
+   <button class="btn btn-primary" id="gen">Change Background Color</button>
+  
+  <script>
+    $(document).ready(function() {
+      setColor();
+
+      function setColor() {
+        var colors = ["#33ccff", "#ffff99", "#cc6699"];
+        var color = Math.floor(Math.random() * (colors.length));
+
+        $('body').toggleClass('clicked');
+        setTimeout(function() {
+          $('.clicked').css("background-color", colors[color]);
+          $('body').removeClass('clicked');
+        }, 200)
+      }
+
+      $('#gen').on("click", function() {
+        setColor();
+      });
+
+
+    });
+  </script>
+
+
+</body>
+
+</html>
